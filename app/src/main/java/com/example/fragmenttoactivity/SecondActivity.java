@@ -23,11 +23,11 @@ public class SecondActivity extends AppCompatActivity {
         String[] activeName = null;
         int[] activeImages = null;
 
-        String[] flowerName = {"a", "b", "c", "d", "e", "f"};
+        String[] flowerName = {"Mawar", "Lily", "Matahari", "Matahari", "Tulip ", "Daisy"};
         int[] flowerImages = {R.drawable.a, R.drawable.b, R.drawable.c,
                 R.drawable.d, R.drawable.e, R.drawable.f};
 
-        String[] animalName = {"aa", "bb", "cc", "dd", "ee", "ff"};
+        String[] animalName = {"Kelinci", "Tupai", "Kucing", "Panda", "Koala", "Lumba - Lumba"};
         int[] animalImages = {R.drawable.aa, R.drawable.bb, R.drawable.cc,
                 R.drawable.dd, R.drawable.ee, R.drawable.ff};
 
@@ -57,7 +57,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (finalActiveName != null) {
-                    Toast.makeText(SecondActivity.this, "You Click On " + finalActiveName[position], Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondActivity.this, "Ini Adalah " + finalActiveName[position], Toast.LENGTH_SHORT).show();
                 }
             }
         });
