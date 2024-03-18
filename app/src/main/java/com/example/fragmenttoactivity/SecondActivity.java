@@ -6,6 +6,8 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.fragmenttoactivity.databinding.ActivitySecondBinding;
 
@@ -17,6 +19,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivitySecondBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -59,6 +62,18 @@ public class SecondActivity extends AppCompatActivity {
                 if (finalActiveName != null) {
                     Toast.makeText(SecondActivity.this, "Ini Adalah " + finalActiveName[position], Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        // Menambahkan onClickListener ke tombol
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Membuat transaksi fragment untuk menampilkan fragment baru
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, new HomeFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
     }
